@@ -1,0 +1,51 @@
+{
+  "name": "integration-runtime",
+  "version": "0.1.0",
+  "description": "MCP, plugin runtime, remote bridge, and environment integration workflows.",
+  "author": {
+    "name": "Codex Migration",
+    "email": "noreply@example.com",
+    "url": "https://github.com/<ORG>/<REPO>"
+  },
+  "homepage": "https://github.com/<ORG>/<REPO>",
+  "repository": "https://github.com/<ORG>/<REPO>",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "plugins",
+    "remote-control",
+    "browser",
+    "runtime"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Integration Runtime",
+    "shortDescription": "Connect tools, MCP servers, and remote runtimes.",
+    "longDescription": "Manages MCP servers, plugin reloads, remote-control setup, environment bridging, and desktop/web integration surfaces.",
+    "developerName": "Codex Migration",
+    "category": "Developer Tools",
+    "capabilities": [
+      "MCP",
+      "Plugins",
+      "Remote",
+      "Browser"
+    ],
+    "websiteURL": "https://github.com/<ORG>/<REPO>",
+    "privacyPolicyURL": "https://github.com/<ORG>/<REPO>/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/<ORG>/<REPO>/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Set up MCP servers for this workspace and verify connectivity.",
+      "Reload plugin runtime and validate integration health checks.",
+      "Prepare remote-control and browser integration for this task."
+    ],
+    "brandColor": "#C92A2A",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [
+      "./assets/screenshot1.png"
+    ]
+  }
+}

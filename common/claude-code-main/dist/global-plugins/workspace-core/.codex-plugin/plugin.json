@@ -1,0 +1,51 @@
+{
+  "name": "workspace-core",
+  "version": "0.1.0",
+  "description": "Core workspace navigation, context, and session operations.",
+  "author": {
+    "name": "Codex Migration",
+    "email": "noreply@example.com",
+    "url": "https://github.com/<ORG>/<REPO>"
+  },
+  "homepage": "https://github.com/<ORG>/<REPO>",
+  "repository": "https://github.com/<ORG>/<REPO>",
+  "license": "MIT",
+  "keywords": [
+    "workspace",
+    "context",
+    "session",
+    "files",
+    "diagnostics"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Workspace Core",
+    "shortDescription": "File, context, and session workflow foundation.",
+    "longDescription": "Provides stable workspace operations including context inspection, session hygiene, diagnostics, and repository file navigation.",
+    "developerName": "Codex Migration",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive",
+      "Session"
+    ],
+    "websiteURL": "https://github.com/<ORG>/<REPO>",
+    "privacyPolicyURL": "https://github.com/<ORG>/<REPO>/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/<ORG>/<REPO>/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Inspect this workspace and summarize current context usage.",
+      "Prepare this repo session for coding and diagnostics.",
+      "Clean session history while preserving actionable context."
+    ],
+    "brandColor": "#0B7285",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [
+      "./assets/screenshot1.png"
+    ]
+  }
+}

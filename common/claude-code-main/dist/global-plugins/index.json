@@ -1,0 +1,61 @@
+{
+  "format_version": "1.0",
+  "generated_at": "2026-04-01",
+  "scope": "user-global",
+  "plugins": [
+    {
+      "name": "agent-orchestration",
+      "version": "0.1.0",
+      "description": "Planning, task decomposition, and multi-agent execution workflows.",
+      "source_path": "dist/global-plugins/agent-orchestration",
+      "target_path": "%USERPROFILE%\\plugins\\agent-orchestration",
+      "marketplace_entry_path": "./plugins/agent-orchestration",
+      "skills_path": "./skills/",
+      "mcp_config_path": "./.mcp.json"
+    },
+    {
+      "name": "git-review",
+      "version": "0.1.0",
+      "description": "Git change review, commit hygiene, and PR preparation workflows.",
+      "source_path": "dist/global-plugins/git-review",
+      "target_path": "%USERPROFILE%\\plugins\\git-review",
+      "marketplace_entry_path": "./plugins/git-review",
+      "skills_path": "./skills/",
+      "mcp_config_path": "./.mcp.json"
+    },
+    {
+      "name": "integration-runtime",
+      "version": "0.1.0",
+      "description": "MCP, plugin runtime, remote bridge, and environment integration workflows.",
+      "source_path": "dist/global-plugins/integration-runtime",
+      "target_path": "%USERPROFILE%\\plugins\\integration-runtime",
+      "marketplace_entry_path": "./plugins/integration-runtime",
+      "skills_path": "./skills/",
+      "mcp_config_path": "./.mcp.json"
+    },
+    {
+      "name": "personal-productivity",
+      "version": "0.1.0",
+      "description": "Memory, verification, and developer productivity workflow helpers.",
+      "source_path": "dist/global-plugins/personal-productivity",
+      "target_path": "%USERPROFILE%\\plugins\\personal-productivity",
+      "marketplace_entry_path": "./plugins/personal-productivity",
+      "skills_path": "./skills/",
+      "mcp_config_path": "./.mcp.json"
+    },
+    {
+      "name": "workspace-core",
+      "version": "0.1.0",
+      "description": "Core workspace navigation, context, and session operations.",
+      "source_path": "dist/global-plugins/workspace-core",
+      "target_path": "%USERPROFILE%\\plugins\\workspace-core",
+      "marketplace_entry_path": "./plugins/workspace-core",
+      "skills_path": "./skills/",
+      "mcp_config_path": "./.mcp.json"
+    }
+  ],
+  "registry": {
+    "marketplace_path": "%USERPROFILE%\\.agents\\plugins\\marketplace.json",
+    "plugins_root": "%USERPROFILE%\\plugins"
+  }
+}

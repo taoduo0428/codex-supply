@@ -1,0 +1,51 @@
+{
+  "name": "git-review",
+  "version": "0.1.0",
+  "description": "Git change review, commit hygiene, and PR preparation workflows.",
+  "author": {
+    "name": "Codex Migration",
+    "email": "noreply@example.com",
+    "url": "https://github.com/<ORG>/<REPO>"
+  },
+  "homepage": "https://github.com/<ORG>/<REPO>",
+  "repository": "https://github.com/<ORG>/<REPO>",
+  "license": "MIT",
+  "keywords": [
+    "git",
+    "review",
+    "pull-request",
+    "security",
+    "release"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Git Review",
+    "shortDescription": "Branch, diff, review, and ship-ready commits.",
+    "longDescription": "Turns repository changes into reviewable and releasable outputs: branch hygiene, commit quality, PR readiness, and security checks.",
+    "developerName": "Codex Migration",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Git",
+      "Review",
+      "Security",
+      "Release"
+    ],
+    "websiteURL": "https://github.com/<ORG>/<REPO>",
+    "privacyPolicyURL": "https://github.com/<ORG>/<REPO>/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/<ORG>/<REPO>/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Review current diff and prepare a clean commit plan.",
+      "Generate a PR-ready summary with risk and test notes.",
+      "Run a security-focused review before release tagging."
+    ],
+    "brandColor": "#2B8A3E",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [
+      "./assets/screenshot1.png"
+    ]
+  }
+}

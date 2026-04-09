@@ -1,0 +1,51 @@
+{
+  "name": "agent-orchestration",
+  "version": "0.1.0",
+  "description": "Planning, task decomposition, and multi-agent execution workflows.",
+  "author": {
+    "name": "Codex Migration",
+    "email": "noreply@example.com",
+    "url": "https://github.com/<ORG>/<REPO>"
+  },
+  "homepage": "https://github.com/<ORG>/<REPO>",
+  "repository": "https://github.com/<ORG>/<REPO>",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "tasks",
+    "agents",
+    "orchestration",
+    "execution"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Agent Orchestration",
+    "shortDescription": "Plan, split, and execute complex tasks.",
+    "longDescription": "Coordinates planning mode, task lifecycles, and multi-agent decomposition for large repository changes.",
+    "developerName": "Codex Migration",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Planning",
+      "Tasking",
+      "Multi-Agent",
+      "Execution"
+    ],
+    "websiteURL": "https://github.com/<ORG>/<REPO>",
+    "privacyPolicyURL": "https://github.com/<ORG>/<REPO>/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/<ORG>/<REPO>/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Create a phased implementation plan and execute by priority.",
+      "Split this refactor into independent parallel workstreams.",
+      "Convert this objective into trackable tasks with clear ownership."
+    ],
+    "brandColor": "#5F3DC4",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [
+      "./assets/screenshot1.png"
+    ]
+  }
+}

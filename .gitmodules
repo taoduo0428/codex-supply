@@ -1,0 +1,12 @@
+[submodule "external/modules/mod-a"]
+	path = external/modules/mod-a
+	url = https://github.com/obra/superpowers.git
+[submodule "external/modules/mod-b"]
+	path = external/modules/mod-b
+	url = https://github.com/HKUDS/OpenSpace.git
+[submodule "external/modules/mod-c"]
+	path = external/modules/mod-c
+	url = https://github.com/cyjjjj-21/self-improving-for-codex.git
+[submodule "external/modules/mod-d"]
+	path = external/modules/mod-d
+	url = https://github.com/thunlp/ProactiveAgent.git

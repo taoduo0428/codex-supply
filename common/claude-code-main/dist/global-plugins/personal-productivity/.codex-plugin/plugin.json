@@ -1,0 +1,51 @@
+{
+  "name": "personal-productivity",
+  "version": "0.1.0",
+  "description": "Memory, verification, and developer productivity workflow helpers.",
+  "author": {
+    "name": "Codex Migration",
+    "email": "noreply@example.com",
+    "url": "https://github.com/<ORG>/<REPO>"
+  },
+  "homepage": "https://github.com/<ORG>/<REPO>",
+  "repository": "https://github.com/<ORG>/<REPO>",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "verify",
+    "debug",
+    "productivity",
+    "workflow"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Personal Productivity",
+    "shortDescription": "Memory, verification, and quality guard workflows.",
+    "longDescription": "Supports repeatable personal workflows for memory curation, debugging, verification loops, and quality-focused task closure.",
+    "developerName": "Codex Migration",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Memory",
+      "Verification",
+      "Debugging",
+      "Automation"
+    ],
+    "websiteURL": "https://github.com/<ORG>/<REPO>",
+    "privacyPolicyURL": "https://github.com/<ORG>/<REPO>/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/<ORG>/<REPO>/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Review this session and promote durable memory entries.",
+      "Run a verify-debug loop and summarize unresolved risks.",
+      "Turn this repeated process into a reusable skill workflow."
+    ],
+    "brandColor": "#E67700",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [
+      "./assets/screenshot1.png"
+    ]
+  }
+}

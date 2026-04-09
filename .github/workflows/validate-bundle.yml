@@ -1,0 +1,100 @@
+name: Validate Bundle
+
+on:
+  pull_request:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  portability-and-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Install portability tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ripgrep
+
+      - name: Secret scan
+        shell: bash
+        run: |
+          set -euo pipefail
+          if rg -n --hidden -g '!**/.git/**' -g '!external/**' \
+            -e 'github_pat_[A-Za-z0-9_]{40,}' \
+            -e '\\bghp_[A-Za-z0-9]{30,}\\b' \
+            -e 'GITHUB_TOKEN=(ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,})' \
+            -e 'OPENAI_API_KEY=sk-[A-Za-z0-9-]{20,}' \
+            .; then
+            echo "[FAIL] potential secrets found"
+            exit 1
+          fi
+          echo "[OK] secret scan passed"
+
+      - name: Path portability scan
+        shell: bash
+        run: |
+          set -euo pipefail
+          if rg -n --hidden -g '!**/.git/**' -g '!external/**' \
+            -e '/home/t[a]oduo0428' \
+            -e '/mnt/c/Users/[4]8842' \
+            -e 'C:\\Users\\[4]8842' \
+            -e 't[a]oduo0428' \
+            .; then
+            echo "[FAIL] machine-specific paths detected"
+            exit 1
+          fi
+          echo "[OK] path portability scan passed"
+
+      - name: Bash syntax checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          find wsl -type f -name '*.sh' -print0 | while IFS= read -r -d '' f; do
+            bash -n "$f"
+          done
+          echo "[OK] bash syntax checks passed"
+
+  powershell-parse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Parse PowerShell scripts
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $files = @()
+          $files += Get-ChildItem -Path 'win' -Filter '*.ps1' -File -Recurse | ForEach-Object FullName
+          $files += Get-ChildItem -Path 'common/claude-code-main/scripts' -Filter '*.ps1' -File -Recurse | ForEach-Object FullName
+          $files += Get-ChildItem -Path 'common/claude-code-main/dist/global-plugins' -Filter '*.ps1' -File -Recurse | ForEach-Object FullName
+
+          if ($files.Count -eq 0) {
+            throw 'No PowerShell files found for parse checks.'
+          }
+
+          $failed = $false
+          foreach ($f in $files) {
+            $tokens = $null
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($f, [ref]$tokens, [ref]$errors)
+            if ($errors.Count -gt 0) {
+              Write-Host "[FAIL] $f" -ForegroundColor Red
+              $errors | ForEach-Object { Write-Host $_.Message -ForegroundColor Red }
+              $failed = $true
+            }
+          }
+
+          if ($failed) {
+            throw 'PowerShell parser errors found.'
+          }
+
+          Write-Host '[OK] PowerShell parse checks passed' -ForegroundColor Green
